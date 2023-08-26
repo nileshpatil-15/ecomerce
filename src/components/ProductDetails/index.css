@@ -1,0 +1,65 @@
+.product-details-container {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-details-Inner-container {
+  max-height: 700px;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+}
+.product-description-container {
+  width: 55%;
+}
+.detailed-img {
+  min-height: 100%;
+  width: 40%;
+ 
+}
+.details-title {
+  margin: 0px;
+  font-family: "Courier New", Courier, monospace;
+}
+.details-description {
+  font-size: 14px;
+  font-family: roboto;
+  font-weight: 500;
+}
+.incease-decrease-btn {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.details-mini-container {
+  max-height: 200px;
+  overflow: hidden;
+}
+.details-price {
+  font-size: 20px;
+  font-weight: 700;
+}
+.common {
+  margin: 4px;
+}
+.details-rating {
+  font-weight: 600;
+}
+.operator {
+  font-weight: 800;
+  font-size: 27px;
+  cursor: pointer;
+}
+.quantity {
+  font-weight: 600;
+  font-size: 27px;
+
+  margin-left: 27px;
+  margin-right: 27px;
+}
+span {
+  font-weight: 700;
+}

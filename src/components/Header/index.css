@@ -1,0 +1,46 @@
+*{
+  box-sizing: border-box;
+}
+.navbar {
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(to right, white, #7bd9f6);
+  box-sizing: border-box;
+}
+.webLogo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.shoppingOptions,
+.webInfoOptions {
+  list-style-type: none;
+  display: flex;
+}
+.nav-item {
+  margin: 8px;
+  font-size: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  font-family: roboto;
+  font-weight: 700;
+}
+.nav-item:hover {
+  color: red;
+  background: linear-gradient(90deg, #1095c1 100%, #000 0) var(--_p, 100%) /
+    200% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 0.4s;
+}
+@media screen and (min-width: 576px) {
+  .nav-item {
+    font-size: 14px;
+  }
+}
