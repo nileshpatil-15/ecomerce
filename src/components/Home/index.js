@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import Header from "../Header";
+import Footer from "../Footer";
 import "./index.css";
 
 const Home = () => {
@@ -18,6 +20,9 @@ const Home = () => {
   }
 
   return (
+    <>
+    
+   
     <div className="home-banner-container" style={imageStyle}>
       <div className="banner-title-and-button">
         <h1 className="banner-title">LETS'S EXPOLRE UNIQUE PRODUCTS</h1>
@@ -27,6 +32,8 @@ const Home = () => {
 
       </div>
     </div>
+
+    </>
   );
 };
 export default Home;

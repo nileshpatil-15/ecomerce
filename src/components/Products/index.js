@@ -2,13 +2,11 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GrSearch } from "react-icons/gr";
 import "./index.css";
+import { products } from "../../constants";
 
 const Products = () => {
   const [data, setData] = useState([]);
-
-  useEffect(() => {
-    getData();
-  }, []);
+  const [input, setInput] = useState("");
 
   const navigate = useNavigate();
   let imageStyle = {
@@ -20,25 +18,20 @@ const Products = () => {
     color: "white",
   };
 
-
-  const getData = () => {
-    fetch("data.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    }) 
-      .then(function (res) {
-        return res.json();
-      }) 
-      .then(function (myJson) {
-        setData(myJson);
-      });
-  };
-
+  useEffect(() => {
+    setData(products);
+  }, []);
 
   const handleBuy = (id) => {
     navigate(`/products/${id}`);
+  };
+  const setSearchedData = () => {
+    console.log("renderd");
+    const filterdProduct = products.filter((item) =>
+      item.title.toLowerCase().includes(input)
+    );
+   
+    setData(filterdProduct);
   };
 
   return (
@@ -46,11 +39,16 @@ const Products = () => {
       <div className="products-inner-container">
         <div className="input-container">
           <input
+            value={input}
             className="input-element"
-            type="search"
+            type="text"
             placeholder="What are you looking for ..."
+            name="searchInput"
+            onChange={(e) => setInput(e.target.value)}
           />
-          <GrSearch className="search-icon" />
+          <button className="search-icon" onClick={setSearchedData}>
+            <GrSearch className="" />
+          </button>
         </div>
         <ul className="products-list-container">
           {data &&
@@ -58,7 +56,11 @@ const Products = () => {
             data.map((item) => {
               return (
                 <li key={item.id} className="product-card">
-                  <img className="product-img" src={item.thumbnail} alt='product' />
+                  <img
+                    className="product-img"
+                    src={item.thumbnail}
+                    alt="product"
+                  />
                   <hr />
                   <div className="card-description-container">
                     <div className="productName-and-buyButton-container">
@@ -76,7 +78,6 @@ const Products = () => {
                       <span>Price: $</span> {item.price}
                     </p>
                     <p className="product-description same">
-                      
                       <span>description: </span> {item.description}
                     </p>
                   </div>

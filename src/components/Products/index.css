@@ -42,10 +42,14 @@
 }
 .search-icon {
   margin-left: 6px;
-  
+  background-color: transparent;
   height: 100%;
   width: 30px;
   cursor: pointer;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  
 }
 .products-list-container {
   padding-left: 0%;

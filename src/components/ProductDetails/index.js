@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import "./index.css";
 import { products } from "../../constants";
 
@@ -7,7 +7,7 @@ const ProductDetails = () => {
   const [item, setData] = useState([]);
 
   const { id } = useParams();
-
+ 
   const productItem = products.filter((item) => item.id === parseInt(id));
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const ProductDetails = () => {
           <p className=" details-price common">
             <span>Price :</span> {item.price}
           </p>
-          <button className="buy-btn">BUY NOW</button>
+        <a href={`https://amazon.com/`} target="_blank"> <button className="buy-btn" >BUY NOW</button></a>
         </div>
       </div>
     </div>

@@ -1,16 +1,45 @@
+
 .footer-container {
     display: flex;
     flex-direction: column;
     background: black;
     text-align: center;
     width: 100vw;
-    flex-grow: 1;
+
     padding: 14px;
+    /* max-height: 110px; */
+
+
+
   }
   
-  .footer-description,
+  .footer-description,.foooter-conatct-container,
   .footer-title {
     color: #ffffff;
     font-family: roboto;
     margin: 0px;
+  }
+  .foooter-conatct-container{
+    display: flex;
+    justify-content: space-around;
+  }.contact-tag{
+    color: #ffffff;
+  }
+  .equal,.tag{
+    color: #ffffff;
+    margin: 4px;
+  }
+  .tag{
+    font-size: 24px;
+  }
+  .logo{
+    background-color: #ffffff;
+    border-radius: 50%;
+    font-size: 30px;
+  cursor: pointer;
+    margin: 6px;
+  }
+  .social-sites-cntr{
+    display: flex;
+    justify-content: center;
   }
